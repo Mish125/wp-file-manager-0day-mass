@@ -53,7 +53,7 @@ def main(url):
 		headers ={
 		"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36",
 		}
-		get_jembut = requests.get(url+'/wp-content/plugins/wp-file-manager/lib/php/connector.minimal.php',headers=headers,timeout=15).content
+		get_jembut = requests.get(url+'/wp-content/plugins/wp-file-manager/lib/php/connector.minimal.php',headers=headers,timeout=30).content
 		if '{"error":["errUnknownCmd"]}' in get_jembut:
 			text += ' => \033[32;1mVuln !!!\033[0m'
 			open('vuln.txt', 'a').write(url+'\n')
